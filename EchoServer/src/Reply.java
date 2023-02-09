@@ -19,13 +19,14 @@ public enum Reply {
     REVERSE("reverse") {
         @Override
         public String direct(String[] strings) {
+            StringBuilder builder = new StringBuilder();
             if (strings.length > 1) {
                 for (String string : strings) {
-                    STRING_BUILDER.append(string).append(" ");
+                    builder.append(string).append(" ");
                 }
-                STRING_BUILDER.deleteCharAt(STRING_BUILDER.length() - 1);
-                STRING_BUILDER.reverse();
-                return STRING_BUILDER.toString();
+                builder.deleteCharAt(builder.length() - 1).reverse();
+                builder.reverse();
+                return builder.toString();
             } else {
                 return "THERE'S NOTHING TO REVERSE";
             }
@@ -34,12 +35,13 @@ public enum Reply {
     UPPER("upper") {
         @Override
         public String direct(String[] strings) {
+            StringBuilder builder = new StringBuilder();
             if (strings.length > 1) {
                 for (String string : strings) {
-                    STRING_BUILDER.append(string).append(" ");
+                    builder.append(string).append(" ");
                 }
-                STRING_BUILDER.deleteCharAt(STRING_BUILDER.length() - 1);
-                return STRING_BUILDER.toString().toUpperCase();
+                builder.deleteCharAt(builder.length() - 1);
+                return builder.toString().toUpperCase();
             } else {
                 return "THERE'S NOTHING TO UPPER";
             }
@@ -51,7 +53,6 @@ public enum Reply {
             return null;
         }
     };
-    private static final StringBuilder STRING_BUILDER = new StringBuilder();
 
     Reply(String value) {
         this.value = value;
