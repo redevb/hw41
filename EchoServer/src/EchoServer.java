@@ -48,7 +48,7 @@ public class EchoServer {
                 }
             }
         } catch (NoSuchElementException e) {
-            System.out.printf("CLIENT DROPPED TH CONNECTION%n");
+            System.out.printf("CLIENT DROPPED THE CONNECTION%n");
         }
     }
 }

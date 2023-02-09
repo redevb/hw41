@@ -21,11 +21,11 @@ public enum Reply {
         public String direct(String[] strings) {
             if (strings.length > 1) {
                 for (String string : strings) {
-                    BUILDER.append(string).append(" ");
+                    STRING_BUILDER.append(string).append(" ");
                 }
-                BUILDER.deleteCharAt(BUILDER.length() - 1);
-                BUILDER.reverse();
-                return BUILDER.toString();
+                STRING_BUILDER.deleteCharAt(STRING_BUILDER.length() - 1);
+                STRING_BUILDER.reverse();
+                return STRING_BUILDER.toString();
             } else {
                 return "THERE'S NOTHING TO REVERSE";
             }
@@ -36,10 +36,10 @@ public enum Reply {
         public String direct(String[] strings) {
             if (strings.length > 1) {
                 for (String string : strings) {
-                    BUILDER.append(string).append(" ");
+                    STRING_BUILDER.append(string).append(" ");
                 }
-                BUILDER.deleteCharAt(BUILDER.length() - 1);
-                return BUILDER.toString().toUpperCase();
+                STRING_BUILDER.deleteCharAt(STRING_BUILDER.length() - 1);
+                return STRING_BUILDER.toString().toUpperCase();
             } else {
                 return "THERE'S NOTHING TO UPPER";
             }
@@ -51,12 +51,11 @@ public enum Reply {
             return null;
         }
     };
-    private static final StringBuilder BUILDER = new StringBuilder();
+    private static final StringBuilder STRING_BUILDER = new StringBuilder();
 
     Reply(String value) {
         this.value = value;
     }
-
 
     public abstract String direct(String[] strings);
 
